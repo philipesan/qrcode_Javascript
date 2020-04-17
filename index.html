@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <script src="js/qrcode.min.js"></script>
+        <script>
+            function geraQr() 
+            {
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'));
+                qr_code.makeCode(text_qr.value);
+            }
+
+            function geraQrPequeno() 
+            {
+
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'), {
+                    width: 74,
+                    height: 74,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qr_code.makeCode(text_qr.value);
+            }
+
+            function geraQrGrande() 
+            {
+
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'), {
+                    width: 300,
+                    height: 300,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qr_code.makeCode(text_qr.value);
+            }
+
+            function geraQrAzul() 
+            {
+
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'), {
+                    width: 300,
+                    height: 300,
+                    colorDark : "#324EA8",
+                    colorLight : "#2A8C16",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qr_code.makeCode(text_qr.value);
+            }
+
+            function geraQrVermelho() 
+            {
+
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'), {
+                    width: 300,
+                    height: 300,
+                    colorDark : "#A83232",
+                    colorLight : "#324EA8",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qr_code.makeCode(text_qr.value);
+            }
+
+            function geraQrVerde() 
+            {
+
+                var text_qr = document.getElementById("qrdata");
+                var qr_code = new QRCode(document.getElementById('qrcode'), {
+                    width: 300,
+                    height: 300,
+                    colorDark : "#2A8C16",
+                    colorLight : "#A83232",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qr_code.makeCode(text_qr.value);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="qrdata"><br>
+        <p><button type="button" id="Send" onclick="javascript:geraQr();">Gerar QR</button>
+        <button type="button" id="Send" onclick="javascript:geraQrPequeno();">Gerar QR Pequeno</button></p>
+        <p><button type="button" id="Send" onclick="javascript:geraQrGrande();">Gerar QR Grande</button>
+        <button type="button" id="Send" onclick="javascript:geraQrAzul();">Gerar QR Azul</button></p>
+        <p><button type="button" id="Send" onclick="javascript:geraQrVermelho();">Gerar QR Vermelho</button>
+        <button type="button" id="Send" onclick="javascript:geraQrVerde();">Gerar QR Verde</button></p>
+        <hr/>
+        <div id="qrcode"></div>
+
+    </body>
+</html>
